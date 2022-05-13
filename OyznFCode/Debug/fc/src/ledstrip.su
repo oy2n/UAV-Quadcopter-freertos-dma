@@ -1,0 +1,4 @@
+ledstrip.c:39:13:ledStripFillBufferWitchColor	24	static
+ledstrip.c:51:6:ledStripInit	8	static
+ledstrip.c:57:6:ledStripON	8	static
+ledstrip.c:63:6:ledStripOFF	8	static

@@ -1,0 +1,5 @@
+pid.c:4:6:pidInit	48	static
+pid.c:27:7:pidUpdate	24	static
+pid.c:64:6:pidReset	16	static
+pid.c:72:6:pidResetIntegral	16	static
+pid.c:77:6:pidSetIntegral	16	static

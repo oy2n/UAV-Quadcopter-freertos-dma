@@ -1,0 +1,6 @@
+pm.c:45:6:pmInit	8	static
+pm.c:56:10:batteryAdcToVoltage	24	static
+pm.c:62:13:updateBatteryVoltage	24	static
+pm.c:74:6:pmTask	24	static
+pm.c:152:7:pmGetBatteryVoltage	4	static
+pm.c:157:16:getBatteryState	4	static

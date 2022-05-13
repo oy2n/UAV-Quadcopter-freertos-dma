@@ -1,0 +1,5 @@
+rc_controls.c:18:18:getRcStickPositions	4	static
+rc_controls.c:24:13:updateRcStickPositions	16	static
+rc_controls.c:44:6:processRcStickPositions	16	static
+rc_controls.c:120:6:processRcAUXPositions	16	static
+rc_controls.c:200:18:calculateThrottleStatus	4	static

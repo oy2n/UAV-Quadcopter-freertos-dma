@@ -1,0 +1,3 @@
+GPS.c:28:6:GPS_PVT_Parse	8	static
+GPS.c:290:6:Set_GPS_USART	8	static
+GPS.c:305:6:Ublox_Set_Output_PVT_10hz_Baud_Set	24	static

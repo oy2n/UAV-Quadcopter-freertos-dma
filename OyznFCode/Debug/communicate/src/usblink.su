@@ -1,0 +1,5 @@
+usblink.c:35:6:usblinkInit	8	static
+usblink.c:48:6:usblinkSendPacket	16	static
+usblink.c:56:5:usblinkGetFreeTxQueuePackets	8	static
+usblink.c:62:6:usblinkTxTask	128	static
+usblink.c:89:6:usblinkRxTask	24	static

@@ -1,0 +1,6 @@
+led.c:16:6:ledInit	4	static
+led.c:21:6:warningLedON	4	static
+led.c:26:6:warningLedOFF	4	static
+led.c:31:6:warningLedFlash	4	static
+led.c:36:6:warningLedRefresh	8	static
+led.c:52:6:warningLedUpdate	8	static

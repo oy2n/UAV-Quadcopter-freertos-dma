@@ -1,0 +1,4 @@
+stmflash.c:7:5:STMFLASH_ReadWord	16	static
+stmflash.c:15:10:STMFLASH_GetFlashSector	16	static
+stmflash.c:41:6:STMFLASH_Write	40	static
+stmflash.c:85:6:STMFLASH_Read	40	static

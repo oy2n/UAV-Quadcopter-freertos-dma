@@ -1,0 +1,8 @@
+accelerometer.c:39:6:accSetCalibrationCycles	16	static
+accelerometer.c:44:6:accIsCalibrationComplete	4	static
+accelerometer.c:49:13:isOnFinalAccelerationCalibrationCycle	4	static
+accelerometer.c:54:13:isOnFirstAccelerationCalibrationCycle	4	static
+accelerometer.c:60:12:getPrimaryAxisIndex	16	static
+accelerometer.c:83:13:performAcclerationCalibration	144	static
+accelerometer.c:170:6:accInit	24	static
+accelerometer.c:195:6:accUpdate	24	static

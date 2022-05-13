@@ -1,0 +1,7 @@
+gyro.c:45:6:gyroSetCalibrationCycles	16	static
+gyro.c:50:6:gyroIsCalibrationComplete	4	static
+gyro.c:55:13:isOnFinalGyroCalibrationCycle	4	static
+gyro.c:60:13:isOnFirstGyroCalibrationCycle	4	static
+gyro.c:65:6:performGyroCalibration	24	static
+gyro.c:103:6:gyroInit	24	static
+gyro.c:120:6:gyroUpdate	24	static

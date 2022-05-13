@@ -1,0 +1,6 @@
+sensorsalignment.c:11:13:isBoardAlignmentStandard	16	static
+sensorsalignment.c:16:6:initBoardAlignment	24	static
+sensorsalignment.c:36:6:updateBoardAlignment	24	static
+sensorsalignment.c:50:6:applyBoardAlignment	24	static
+sensorsalignment.c:67:6:applySensorAlignment	32	static
+sensorsalignment.c:118:6:applyAndSaveBoardAlignmentDelta	16	static

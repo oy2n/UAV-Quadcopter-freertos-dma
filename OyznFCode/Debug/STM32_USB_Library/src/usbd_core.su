@@ -1,0 +1,14 @@
+usbd_core.c:134:6:USBD_Init	24	static
+usbd_core.c:166:13:USBD_DeInit	16	static
+usbd_core.c:179:16:USBD_SetupStage	24	static
+usbd_core.c:213:16:USBD_DataOutStage	24	static
+usbd_core.c:266:16:USBD_DataInStage	24	static
+usbd_core.c:348:17:USBD_RunTestMode	16	static
+usbd_core.c:361:16:USBD_Reset	16	static
+usbd_core.c:389:16:USBD_Resume	16	static
+usbd_core.c:406:16:USBD_Suspend	16	static
+usbd_core.c:423:16:USBD_SOF	16	static
+usbd_core.c:439:13:USBD_SetCfg	16	static
+usbd_core.c:455:13:USBD_ClrCfg	16	static
+usbd_core.c:467:16:USBD_IsoINIncomplete	16	static
+usbd_core.c:479:16:USBD_IsoOUTIncomplete	16	static

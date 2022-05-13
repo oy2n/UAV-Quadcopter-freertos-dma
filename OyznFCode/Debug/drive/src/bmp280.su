@@ -1,0 +1,7 @@
+bmp280.c:42:6:bmp280Init	32	static
+bmp280.c:78:6:bmp280GetPressure	24	static
+bmp280.c:90:5:bmp280CompensateT	32	static
+bmp280.c:104:5:bmp280CompensateP	136	static
+bmp280.c:123:6:bmp280GetData	16	static
+bmp280.c:131:6:bmp280GetDat	8	static
+bmp280.c:145:7:bmp280PressureToAltitude	16	static

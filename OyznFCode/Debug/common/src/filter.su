@@ -1,0 +1,15 @@
+filter.c:13:6:pt1FilterInit	24	static
+filter.c:19:7:pt1FilterApply	16	static
+filter.c:25:7:pt1FilterApply4	24	static
+filter.c:37:6:pt1FilterReset	16	static
+filter.c:43:6:rateLimitFilterInit	16	static
+filter.c:48:7:rateLimitFilterApply4	32	static
+filter.c:61:7:filterGetNotchQ	32	static
+filter.c:68:6:biquadFilterInitNotch	32	static
+filter.c:75:6:biquadFilterInitLPF	16	static
+filter.c:81:6:biquadFilterInit	72	static
+filter.c:130:7:biquadFilterApply	24	static
+filter.c:141:6:firFilterInit2	24	static
+filter.c:154:6:firFilterInit	32	static
+filter.c:159:6:firFilterUpdate	16	static
+filter.c:165:7:firFilterApply	24	static

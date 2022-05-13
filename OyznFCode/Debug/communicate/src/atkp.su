@@ -1,0 +1,16 @@
+atkp.c:45:13:atkpSendPacket	16	static
+atkp.c:51:13:sendStatus	80	static
+atkp.c:82:13:sendSenser	64	static
+atkp.c:126:13:sendRCData	64	static
+atkp.c:157:13:sendPower	56	static
+atkp.c:173:13:sendMotorPWM	64	static
+atkp.c:201:13:sendSenser2	56	static
+atkp.c:220:13:sendPid	88	static
+atkp.c:260:13:sendCheck	48	static
+atkp.c:273:13:atkpSendPeriod	56	static
+atkp.c:316:11:atkpCheckSum	24	static
+atkp.c:330:13:atkpReceiveAnl	24	static
+atkp.c:511:6:atkpTxTask	16	static
+atkp.c:520:6:atkpRxAnlTask	48	static
+atkp.c:530:6:atkpInit	8	static
+atkp.c:538:6:atkpReceivePacketBlocking	16	static

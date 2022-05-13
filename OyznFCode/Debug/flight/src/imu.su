@@ -1,0 +1,9 @@
+imu.c:34:13:imuComputeRotationMatrix	48	static
+imu.c:60:6:imuInit	8	static
+imu.c:66:6:imuTransformVectorBodyToEarth	32	static
+imu.c:77:6:imuTransformVectorEarthToBody	32	static
+imu.c:91:14:invSqrt	16	static
+imu.c:97:14:imuMagFastPGainSaleFactor	4	static
+imu.c:109:13:imuMahonyAHRSupdate	120	static
+imu.c:242:13:imuUpdateEulerAngles	16	static
+imu.c:260:6:imuUpdateAttitude	64	static

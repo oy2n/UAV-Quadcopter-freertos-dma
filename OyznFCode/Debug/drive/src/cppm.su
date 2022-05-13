@@ -1,0 +1,4 @@
+cppm.c:23:6:cppmInit	8	static
+cppm.c:64:6:cppmIsAvailible	4	static
+cppm.c:69:5:cppmGetTimestamp	16	static
+cppm.c:76:6:cppmClearQueue	8	static

@@ -1,0 +1,2 @@
+stabilizer.c:23:6:stabilizerInit	8	static
+stabilizer.c:33:6:stabilizerTask	32	static

@@ -1,0 +1,6 @@
+runtime_config.c:33:10:enableFlightMode	24	static
+runtime_config.c:44:10:disableFlightMode	24	static
+runtime_config.c:55:6:isCalibrating	8	static
+runtime_config.c:81:6:updateArmingStatus	8	static
+runtime_config.c:162:6:mwDisarm	8	static
+runtime_config.c:172:6:mwArm	8	static

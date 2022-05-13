@@ -1,0 +1,8 @@
+sensors.c:38:6:sensorsReadGyro	16	static
+sensors.c:43:6:sensorsReadAcc	16	static
+sensors.c:48:6:sensorsReadMag	16	static
+sensors.c:53:6:sensorsReadBaro	16	static
+sensors.c:59:6:sensorsInit	8	static
+sensors.c:80:6:sensorsTask	24	static
+sensors.c:127:6:sensorsAcquire	16	static
+sensors.c:135:6:sensorsIsMagPresent	4	static

@@ -1,0 +1,3 @@
+rx.c:19:6:rxInit	8	static
+rx.c:24:6:ppmTask	24	static
+rx.c:61:6:rxTask	32	static

@@ -1,0 +1,2 @@
+compass_qmc5883l.c:5:6:qmc5883lInit	32	static
+compass_qmc5883l.c:20:6:qmc5883lRead	32	static

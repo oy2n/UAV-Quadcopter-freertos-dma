@@ -1,0 +1,3 @@
+motors.c:13:12:ratioToCCRx	16	static
+motors.c:18:6:motorsInit	8	static
+motors.c:76:6:motorsSetRatio	16	static

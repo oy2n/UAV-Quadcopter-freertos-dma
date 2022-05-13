@@ -1,0 +1,6 @@
+uart1.c:20:6:uart1Init	16	static
+uart1.c:75:6:uart1Test	4	static
+uart1.c:82:6:uart1GetDataWithTimout	16	static
+uart1.c:94:6:uart1SendData	24	static
+uart1.c:108:5:uart1Putchar	16	static
+uart1.c:114:6:uart1Getchar	16	static

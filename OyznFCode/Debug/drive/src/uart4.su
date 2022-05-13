@@ -1,0 +1,4 @@
+uart4.c:32:6:DMA_Send_Vcan	48	static
+uart4.c:64:6:UART2_Send	16	static
+uart4.c:71:6:USART2_Send	16	static
+uart4.c:87:6:USART2_Init	16	static

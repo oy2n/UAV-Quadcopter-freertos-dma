@@ -1,0 +1,6 @@
+iic.c:20:6:DMA1_Stream0Callback	16	static,ignoring_inline_asm
+iic.c:31:6:DMA1_Stream6Callback	16	static,ignoring_inline_asm
+iic.c:73:6:IICInit	8	static
+iic.c:81:6:IICWriteRegister	40	static
+iic.c:102:6:IICReadRegister	40	static
+iic.c:123:6:IICReadWait	24	static

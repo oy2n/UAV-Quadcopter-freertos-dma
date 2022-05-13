@@ -1,0 +1,9 @@
+commander.c:56:14:rcCommandToRate	16	static
+commander.c:62:14:rcCommandToAngle	16	static
+commander.c:69:16:getAxisRcCommand	24	static
+commander.c:79:13:resetSetpointMode	16	static
+commander.c:91:13:setupAltitudeHold	24	static
+commander.c:112:6:commanderGetSetpoint	32	static
+commander.c:216:6:commanderSetupAltitudeHoldMode	4	static
+commander.c:222:10:commanderGetALtHoldThrottle	4	static
+commander.c:228:6:commanderActiveFailsafe	8	static

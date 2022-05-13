@@ -1,0 +1,7 @@
+beeper.c:147:6:beeperInit	8	static
+beeper.c:163:6:beeperSilence	8	static
+beeper.c:178:6:beeper	32	static
+beeper.c:221:13:beeperProcessCommand	16	static
+beeper.c:240:6:beeperTask	24	static
+beeper.c:293:6:beeperConfirmationBeeps	24	static
+beeper.c:312:6:setLedStripAllwaysIsON	16	static

@@ -1,0 +1,8 @@
+usbd_cdc_vcp.c:88:17:VCP_Init	4	static
+usbd_cdc_vcp.c:93:17:VCP_DeInit	4	static
+usbd_cdc_vcp.c:107:17:VCP_Ctrl	24	static
+usbd_cdc_vcp.c:171:17:VCP_DataTx	16	static
+usbd_cdc_vcp.c:208:17:VCP_DataRx	32	static
+usbd_cdc_vcp.c:230:6:usbd_cdc_vcp_Init	16	static
+usbd_cdc_vcp.c:242:6:usbGetDataWithTimout	16	static
+usbd_cdc_vcp.c:252:6:usbsendData	24	static

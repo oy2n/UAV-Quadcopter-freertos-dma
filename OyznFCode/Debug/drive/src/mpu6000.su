@@ -1,0 +1,7 @@
+mpu6000.c:58:6:mpu6000SpiWriteRegister	24	static
+mpu6000.c:73:6:mpu6000SpiReadRegister	24	static
+mpu6000.c:112:6:mpu6000Init	16	static
+mpu6000.c:178:6:mpu6000GyroRead	24	static
+mpu6000.c:190:6:mpu6000AccRead	24	static
+mpu6000.c:202:6:DMA2_Stream0Callback	16	static,ignoring_inline_asm
+mpu6000.c:214:6:DMA2_Stream5Callback	16	static,ignoring_inline_asm

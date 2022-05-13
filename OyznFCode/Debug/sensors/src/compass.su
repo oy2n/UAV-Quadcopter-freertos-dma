@@ -1,0 +1,4 @@
+compass.c:28:6:compassIsHealthy	4	static
+compass.c:33:6:compassIsReady	4	static
+compass.c:38:6:compassSetCalibrationStart	8	static
+compass.c:53:6:compassUpdate	56	static

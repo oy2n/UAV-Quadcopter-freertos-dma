@@ -1,0 +1,2 @@
+usart.c:36:6:_sys_exit	16	static
+stdio.h:214:5:fputc	16	static
