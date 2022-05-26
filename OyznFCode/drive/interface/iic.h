@@ -15,6 +15,9 @@
 bool IICWriteRegister(I2C_HandleTypeDef *hi2c,uint16_t DevAddress,uint16_t MemAddress,uint16_t MemAddSize,uint8_t *pData,uint16_t Size);
 bool IICReadRegister(I2C_HandleTypeDef *hi2c,uint16_t DevAddress,uint16_t MemAddress,uint16_t MemAddSize,uint8_t *pData,uint16_t Size);
 void IICInit(void);
+void DMA1_Stream6Callback();
+void DMA1_Stream0Callback();
+
 extern I2C_HandleTypeDef hi2c1;
 
 #endif /* INTERFACE_IIC_H_ */

@@ -54,7 +54,8 @@ drive/src/mpu6000.o: ../drive/src/mpu6000.c ../drive/interface/mpu6000.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
+ ../Core/Inc/main.h
 
 ../drive/interface/mpu6000.h:
 
@@ -173,3 +174,5 @@ drive/src/mpu6000.o: ../drive/src/mpu6000.c ../drive/interface/mpu6000.h \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
+
+../Core/Inc/main.h:

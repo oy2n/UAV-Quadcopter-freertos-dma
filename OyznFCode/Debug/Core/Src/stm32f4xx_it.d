@@ -52,7 +52,9 @@ Core/Src/stm32f4xx_it.o: ../Core/Src/stm32f4xx_it.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
+ ../drive/interface/ws2812.h ../drive/interface/mpu6000.h \
+ ../flight/interface/sensors_types.h ../drive/interface/iic.h
 
 ../Core/Inc/main.h:
 
@@ -167,3 +169,11 @@ Core/Src/stm32f4xx_it.o: ../Core/Src/stm32f4xx_it.c ../Core/Inc/main.h \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
+
+../drive/interface/ws2812.h:
+
+../drive/interface/mpu6000.h:
+
+../flight/interface/sensors_types.h:
+
+../drive/interface/iic.h:

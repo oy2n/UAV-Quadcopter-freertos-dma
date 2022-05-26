@@ -37,7 +37,7 @@ drive/src/motors.o: ../drive/src/motors.c ../system/sys/sys.h \
  ../common/interface/debug_assert.h ../communicate/interface/console.h \
  ../system/delay/delay.h ../drive/interface/motors.h \
  ../config/interface/config.h ../drive/interface/nvic.h \
- ../fc/interface/pm.h
+ ../fc/interface/pm.h ../Core/Inc/main.h
 
 ../system/sys/sys.h:
 
@@ -124,3 +124,5 @@ drive/src/motors.o: ../drive/src/motors.c ../system/sys/sys.h \
 ../drive/interface/nvic.h:
 
 ../fc/interface/pm.h:
+
+../Core/Inc/main.h:

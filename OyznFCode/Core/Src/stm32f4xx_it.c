@@ -25,6 +25,9 @@
 /* USER CODE BEGIN Includes */
 #include "sys.h"
 #include "cmsis_os.h"
+#include "ws2812.h"
+#include "mpu6000.h"
+#include "iic.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -136,9 +139,9 @@ void HardFault_Handler(void)
 //	//****************************************************
 //	//To test this application, you can use this snippet anywhere:
 //	// //Let's crash the MCU!
-//	// asm (" MOVS r0, #1 \n"
-//	// " LDM r0,{r1-r2} \n"
-//	// " BX LR; \n");
+	// asm (" MOVS r0, #1 \n"
+	// " LDM r0,{r1-r2} \n"
+	// " BX LR; \n");
 //	  PRESERVE8
 //	  IMPORT printHardFault
 //	  TST r14, #4

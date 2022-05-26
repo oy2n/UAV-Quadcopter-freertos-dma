@@ -1,3 +1,3 @@
-exfuns.c:21:6:UART_Printf	272	static
-exfuns.c:30:6:TestFatfs2	40	static
-exfuns.c:58:6:TestFatfs	13096	static
+exfuns.c:22:6:UART_Printf	272	static
+exfuns.c:31:6:TestFatfs2	40	static
+exfuns.c:59:6:TestFatfs	13096	static

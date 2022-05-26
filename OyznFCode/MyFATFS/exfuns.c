@@ -12,6 +12,7 @@
 #include "fatfs.h"
 #include <string.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 extern USART_HandleTypeDef husart1;
 FATFS fs;

@@ -120,9 +120,4 @@ bool IICReadRegister(I2C_HandleTypeDef *hi2c,uint16_t DevAddress,uint16_t MemAdd
 	return result;
 }
 
-bool IICReadWait(I2C_HandleTypeDef *hi2c,uint16_t DevAddress,uint16_t MemAddress,uint16_t MemAddSize,uint8_t *pData,uint16_t Size)
-{
-
-}
-
 

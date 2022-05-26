@@ -10,6 +10,7 @@
 #include "semphr.h"
 #include "queue.h"
 
+extern u32 getSysTickCnt(void);
 #define VERSION 11	/*11 ±íÊ¾V1.1*/
 
 configParam_t configParam;

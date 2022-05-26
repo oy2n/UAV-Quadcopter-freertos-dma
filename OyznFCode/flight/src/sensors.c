@@ -65,7 +65,7 @@ void sensorsInit(void)
 	isMPUPresent = gyroInit(GYRO_UPDATE_RATE);
 	isMPUPresent &= accInit(ACC_UPDATE_RATE);
 	isBaroPresent = baroInit();
-	isMagPresent  = qmc5883lInit();
+	//isMagPresent  = qmc5883lInit();
 	
 	/*创建传感器数据队列*/
 	accelerometerDataQueue = xQueueCreate(1, sizeof(Axis3f));
@@ -98,7 +98,7 @@ void sensorsTask(void *param)
 		
 		if (isMagPresent && RATE_DO_EXECUTE(MAG_UPDATE_RATE, tick))
 		{
-			compassUpdate(&sensors.mag);
+			//compassUpdate(&sensors.mag);
 		}
 		
 		if (isBaroPresent && RATE_DO_EXECUTE(BARO_UPDATE_RATE, tick))

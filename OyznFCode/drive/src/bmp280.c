@@ -38,6 +38,7 @@ static bool isInit = false;
 s32 bmp280RawPressure = 0;
 s32 bmp280RawTemperature = 0;
 float baroTemperature,baroPressure;
+u8 bmpdata[BMP280_DATA_FRAME_SIZE];
 
 bool bmp280Init(void)
 {	
@@ -77,11 +78,10 @@ bool bmp280Init(void)
 
 void bmp280GetPressure(void)
 {
-    u8 data[BMP280_DATA_FRAME_SIZE];
-    if(!IICReadRegister(&hi2c1,BMP280_I2C_ADDR << 1,BMP280_PRESSURE_MSB_REG,I2C_MEMADD_SIZE_8BIT,&data[0],BMP280_DATA_FRAME_SIZE))
+    if(!IICReadRegister(&hi2c1,BMP280_I2C_ADDR << 1,BMP280_PRESSURE_MSB_REG,I2C_MEMADD_SIZE_8BIT,&bmpdata[0],BMP280_DATA_FRAME_SIZE))
     {
-    	bmp280RawPressure = (s32)((((uint32_t)(data[0])) << 12) | (((uint32_t)(data[1])) << 4) | ((uint32_t)data[2] >> 4));
-    	bmp280RawTemperature = (s32)((((uint32_t)(data[3])) << 12) | (((uint32_t)(data[4])) << 4) | ((uint32_t)data[5] >> 4));
+    	bmp280RawPressure = (s32)((((uint32_t)(bmpdata[0])) << 12) | (((uint32_t)(bmpdata[1])) << 4) | ((uint32_t)bmpdata[2] >> 4));
+    	bmp280RawTemperature = (s32)((((uint32_t)(bmpdata[3])) << 12) | (((uint32_t)(bmpdata[4])) << 4) | ((uint32_t)bmpdata[5] >> 4));
     }
 }
 

@@ -2,6 +2,7 @@
 #include "spi1.h"
 #include "delay.h"
 #include "cmsis_os.h"
+#include "main.h"
 
 extern SPI_HandleTypeDef hspi1;
 extern DMA_HandleTypeDef hdma_spi1_rx;
@@ -55,11 +56,17 @@ static xSemaphoreHandle spirxComplete;
 static xSemaphoreHandle isSPISendFreeMutex;
 static xSemaphoreHandle isSPIReadFreeMutex;
 
+void spiSetSpeed(uint16_t speed);
+
+u8 Gyrobuffer[6];
+u8 Accbuffer[6];
+
 bool mpu6000SpiWriteRegister(uint8_t reg, uint8_t data)
 {
 	bool result = true;
 
 	xSemaphoreTake(isSPISendFreeMutex, 0);
+
     ENABLE_MPU6000();
     result = result && !HAL_SPI_Transmit_DMA(&hspi1, &reg, sizeof(reg));
     xSemaphoreTake(spitxComplete, portMAX_DELAY);
@@ -70,10 +77,11 @@ bool mpu6000SpiWriteRegister(uint8_t reg, uint8_t data)
 	return result;
 }
 //mpu6000SpiReadRegister(MPU_RA_WHO_AM_I, 1, &id);
-bool mpu6000SpiReadRegister(uint8_t reg, uint8_t length, uint8_t *data)
+bool mpu6000SpiReadRegister(uint8_t reg, uint16_t length, uint8_t *data)
 {
 	bool result = true;
 	xSemaphoreTake(isSPIReadFreeMutex, 0);
+
 	ENABLE_MPU6000();
 	if(HAL_DMA_GetState(&hdma_spi1_tx) == HAL_DMA_STATE_READY)
 	{
@@ -82,7 +90,7 @@ bool mpu6000SpiReadRegister(uint8_t reg, uint8_t length, uint8_t *data)
 			reg |= READWRITE_CMD;
 	//		result = result && !HAL_SPI_Transmit(&hspi1,&reg,1,1000);
 			result = result && !HAL_SPI_Transmit_DMA(&hspi1,&reg,1);
-			if(!xSemaphoreTake(spitxComplete, 1))
+			if(!xSemaphoreTake(spitxComplete, 20))
 			{
 				HAL_SPI_DeInit(&hspi1);
 				HAL_SPI_Init(&hspi1);
@@ -97,13 +105,14 @@ bool mpu6000SpiReadRegister(uint8_t reg, uint8_t length, uint8_t *data)
 		{
 			//result = result && !HAL_SPI_Receive(&hspi1,data,length,1000);
 			result = result && !HAL_SPI_Receive_DMA(&hspi1,data,length);
-			if(!xSemaphoreTake(spirxComplete, 1))
+			if(!xSemaphoreTake(spirxComplete,20))
 			{
 				HAL_SPI_DeInit(&hspi1);
 				HAL_SPI_Init(&hspi1);
 			}
 		}
 	}
+
 	DISABLE_MPU6000();
 	xSemaphoreGive(isSPIReadFreeMutex);
 	return result;
@@ -129,7 +138,7 @@ bool mpu6000Init(void)
 	//读取ID
 	u8 id = 0x00;
 	mpu6000SpiReadRegister(MPU_RA_WHO_AM_I, 1, &id);
-	
+	spiSetSpeed(SPI_BAUDRATEPRESCALER_128);
 	//读取正常，初始化
 	if(id == MPU6000_WHO_AM_I_CONST)
 	{
@@ -171,7 +180,7 @@ bool mpu6000Init(void)
 	{
 		//printf("MPU6000 SPI connection [FAIL].\n");
 	}
-
+	spiSetSpeed(SPI_BAUDRATEPRESCALER_8);
 	return isInit;
 }
 
@@ -179,11 +188,11 @@ bool mpu6000GyroRead(Axis3i16* gyroRaw)
 {
 	if(!isInit) 
 		return false;
-	u8 buffer[6];
-	mpu6000SpiReadRegister(MPU_RA_GYRO_XOUT_H, 6, buffer);
-	gyroRaw->x = (((int16_t) buffer[0]) << 8) | buffer[1];
-	gyroRaw->y = (((int16_t) buffer[2]) << 8) | buffer[3];
-	gyroRaw->z = (((int16_t) buffer[4]) << 8) | buffer[5];
+	//u8 buffer[6];
+	mpu6000SpiReadRegister(MPU_RA_GYRO_XOUT_H, 6, &Gyrobuffer[0]);
+	gyroRaw->x = (((int16_t) Gyrobuffer[0]) << 8) | Gyrobuffer[1];
+	gyroRaw->y = (((int16_t) Gyrobuffer[2]) << 8) | Gyrobuffer[3];
+	gyroRaw->z = (((int16_t) Gyrobuffer[4]) << 8) | Gyrobuffer[5];
 	return true;
 }
 
@@ -191,12 +200,22 @@ bool mpu6000AccRead(Axis3i16* accRaw)
 {
 	if(!isInit) 
 		return false;
-	u8 buffer[6];
-	mpu6000SpiReadRegister(MPU_RA_ACCEL_XOUT_H, 6, buffer);
-	accRaw->x = (((int16_t) buffer[0]) << 8) | buffer[1];
-	accRaw->y = (((int16_t) buffer[2]) << 8) | buffer[3];
-	accRaw->z = (((int16_t) buffer[4]) << 8) | buffer[5];
+	//u8 buffer[6];
+	mpu6000SpiReadRegister(MPU_RA_ACCEL_XOUT_H, 6, &Accbuffer[0]);
+	accRaw->x = (((int16_t) Accbuffer[0]) << 8) | Accbuffer[1];
+	accRaw->y = (((int16_t) Accbuffer[2]) << 8) | Accbuffer[3];
+	accRaw->z = (((int16_t) Accbuffer[4]) << 8) | Accbuffer[5];
 	return true;
+}
+
+void spiSetSpeed(uint16_t speed)
+{
+  hspi1.Instance = SPI1;
+  hspi1.Init.BaudRatePrescaler = speed;
+  if (HAL_SPI_Init(&hspi1) != HAL_OK)
+  {
+	Error_Handler();
+  }
 }
 
 void DMA2_Stream0Callback()
@@ -204,10 +223,13 @@ void DMA2_Stream0Callback()
 	portBASE_TYPE xHigherPriorityTaskWoken = pdFALSE;
 	if(__HAL_DMA_GET_TC_FLAG_INDEX(&hdma_spi1_rx))
 	{
-		__HAL_DMA_CLEAR_FLAG(&hdma_spi1_rx,DMA_FLAG_TCIF0_4); //清除全部中断标志
 		//释放传输完成信号量
 		xSemaphoreGiveFromISR(spirxComplete, &xHigherPriorityTaskWoken);
-		portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+		if (xHigherPriorityTaskWoken)
+		{
+			portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+		}
+		__HAL_DMA_CLEAR_FLAG(&hdma_spi1_rx,DMA_FLAG_TCIF2_6); //清除全部中断标志
 	}
 }
 
@@ -216,10 +238,13 @@ void DMA2_Stream5Callback()
 	portBASE_TYPE xHigherPriorityTaskWoken = pdFALSE;
 	if(__HAL_DMA_GET_TC_FLAG_INDEX(&hdma_spi1_tx))
 	{
-		__HAL_DMA_CLEAR_FLAG(&hdma_spi1_tx,DMA_FLAG_TCIF0_4); //清除全部中断标志
 		//释放传输完成信号量
 		xSemaphoreGiveFromISR(spitxComplete, &xHigherPriorityTaskWoken);
-		portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+		if (xHigherPriorityTaskWoken)
+		{
+			portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+		}
+		__HAL_DMA_CLEAR_FLAG(&hdma_spi1_tx,DMA_FLAG_TCIF2_6); //清除全部中断标志
 	}
 }
 

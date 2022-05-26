@@ -303,7 +303,7 @@ static void atkpSendPeriod(void)
 	}
 	if(!(count_ms % PERIOD_MOTOR))
 	{
-		//sendMotorPWM(motorPWM.m1, motorPWM.m2, motorPWM.m3, motorPWM.m4, 0,0,0,0);
+		sendMotorPWM(motorPWM.m1, motorPWM.m2, motorPWM.m3, motorPWM.m4, 0,0,0,0);
 	}
 	if(!(count_ms % PERIOD_SENSOR2))
 	{
