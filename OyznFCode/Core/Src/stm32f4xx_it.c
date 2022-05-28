@@ -28,6 +28,8 @@
 #include "ws2812.h"
 #include "mpu6000.h"
 #include "iic.h"
+#include "motors.h"
+#include "runtime_config.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -134,6 +136,12 @@ void HardFault_Handler(void)
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {
+	motorsSetRatio(MOTOR_M1, 0);
+	motorsSetRatio(MOTOR_M2, 0);
+	motorsSetRatio(MOTOR_M3, 0);
+	motorsSetRatio(MOTOR_M4, 0);
+
+	DISABLE_ARMING_FLAG(ARMED);
     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
 //	//http://www.st.com/mcu/forums-cat-6778-23.html
 //	//****************************************************
@@ -164,12 +172,12 @@ void MemManage_Handler(void)
   while (1)
   {
     /* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
-//	motorsSetRatio(MOTOR_M1, 0);
-//	motorsSetRatio(MOTOR_M2, 0);
-//	motorsSetRatio(MOTOR_M3, 0);
-//	motorsSetRatio(MOTOR_M4, 0);
-//
-//	DISABLE_ARMING_FLAG(ARMED);
+	motorsSetRatio(MOTOR_M1, 0);
+	motorsSetRatio(MOTOR_M2, 0);
+	motorsSetRatio(MOTOR_M3, 0);
+	motorsSetRatio(MOTOR_M4, 0);
+
+	DISABLE_ARMING_FLAG(ARMED);
 //	LED0_OFF;
 //
 //	storeAssertSnapshotData(__FILE__, __LINE__);
@@ -190,12 +198,12 @@ void BusFault_Handler(void)
   while (1)
   {
     /* USER CODE BEGIN W1_BusFault_IRQn 0 */
-//	motorsSetRatio(MOTOR_M1, 0);
-//	motorsSetRatio(MOTOR_M2, 0);
-//	motorsSetRatio(MOTOR_M3, 0);
-//	motorsSetRatio(MOTOR_M4, 0);
-//
-//	DISABLE_ARMING_FLAG(ARMED);
+	motorsSetRatio(MOTOR_M1, 0);
+	motorsSetRatio(MOTOR_M2, 0);
+	motorsSetRatio(MOTOR_M3, 0);
+	motorsSetRatio(MOTOR_M4, 0);
+
+	DISABLE_ARMING_FLAG(ARMED);
 //	LED0_OFF;
 //
 //	storeAssertSnapshotData(__FILE__, __LINE__);
@@ -216,12 +224,12 @@ void UsageFault_Handler(void)
   while (1)
   {
     /* USER CODE BEGIN W1_UsageFault_IRQn 0 */
-//	motorsSetRatio(MOTOR_M1, 0);
-//	motorsSetRatio(MOTOR_M2, 0);
-//	motorsSetRatio(MOTOR_M3, 0);
-//	motorsSetRatio(MOTOR_M4, 0);
-//
-//	DISABLE_ARMING_FLAG(ARMED);
+	motorsSetRatio(MOTOR_M1, 0);
+	motorsSetRatio(MOTOR_M2, 0);
+	motorsSetRatio(MOTOR_M3, 0);
+	motorsSetRatio(MOTOR_M4, 0);
+
+	DISABLE_ARMING_FLAG(ARMED);
 //	LED0_OFF;
 //
 //	storeAssertSnapshotData(__FILE__, __LINE__);
@@ -418,12 +426,12 @@ void DMA2_Stream5_IRQHandler(void)
 /* USER CODE BEGIN 1 */
 void  printHardFault(u32* hardfaultArgs)
 {
-//	motorsSetRatio(MOTOR_M1, 0);
-//	motorsSetRatio(MOTOR_M2, 0);
-//	motorsSetRatio(MOTOR_M3, 0);
-//	motorsSetRatio(MOTOR_M4, 0);
-//
-//	DISABLE_ARMING_FLAG(ARMED);
+	motorsSetRatio(MOTOR_M1, 0);
+	motorsSetRatio(MOTOR_M2, 0);
+	motorsSetRatio(MOTOR_M3, 0);
+	motorsSetRatio(MOTOR_M4, 0);
+
+	DISABLE_ARMING_FLAG(ARMED);
 //	LED0_OFF;
 //
 //	unsigned int stacked_r0;

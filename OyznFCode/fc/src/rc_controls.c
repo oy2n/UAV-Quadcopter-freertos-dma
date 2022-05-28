@@ -106,14 +106,14 @@ void processRcStickPositions(void)
     }
 	
 	//打开和关闭RGB灯
-    if (rcSticks == THR_LO + YAW_CE + PIT_LO + ROL_HI) 
-	{
-		setLedStripAllwaysIsON(true);
-	}
-	else if (rcSticks == THR_LO + YAW_CE + PIT_LO + ROL_LO) 
-	{
-		setLedStripAllwaysIsON(false);
-	}
+//    if (rcSticks == THR_LO + YAW_CE + PIT_LO + ROL_HI)
+//	{
+//		setLedStripAllwaysIsON(true);
+//	}
+//	else if (rcSticks == THR_LO + YAW_CE + PIT_LO + ROL_LO)
+//	{
+//		setLedStripAllwaysIsON(false);
+//	}
 }
 
 //处理辅助通道位置和对应命令

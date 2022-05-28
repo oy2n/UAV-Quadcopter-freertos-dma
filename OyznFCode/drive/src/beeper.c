@@ -168,10 +168,10 @@ void beeperSilence(void)
     beeperPos = 0;
     currentBeeperEntry = NULL;
 	
-	if (ledStripAllwaysON)
-		ledStripON();
-	else
-		ledStripOFF();
+//	if (ledStripAllwaysON)
+//		ledStripON();
+//	else
+//		ledStripOFF();
 }
 
 //激活蜂鸣器对应的序列
