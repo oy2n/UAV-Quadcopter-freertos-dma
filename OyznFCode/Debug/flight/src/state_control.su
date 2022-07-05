@@ -1,5 +1,5 @@
-state_control.c:64:13:allPidInit	136	static
-state_control.c:106:6:stateControlInit	8	static
-state_control.c:112:6:stateControl	32	static
-state_control.c:207:6:stateControlResetYawHolding	4	static
-state_control.c:213:6:stateControlSetVelocityZPIDIntegration	16	static
+state_control.c:51:13:allPidInit	136	static
+state_control.c:93:6:stateControlInit	8	static
+state_control.c:99:6:stateControl	32	static
+state_control.c:194:6:stateControlResetYawHolding	4	static
+state_control.c:200:6:stateControlSetVelocityZPIDIntegration	16	static

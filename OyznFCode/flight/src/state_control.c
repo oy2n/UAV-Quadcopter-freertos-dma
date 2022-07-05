@@ -7,19 +7,6 @@
 #include "maths.h"
 #include "pid.h"
 
-/********************************************************************************	 
- * 本程序只供学习使用，未经作者许可，不得用于其它任何用途
- * ATKflight飞控固件
- * 四轴姿态控制代码	
- * 正点原子@ALIENTEK
- * 技术论坛:www.openedv.com
- * 创建日期:2018/5/2
- * 版本：V1.0
- * 版权所有，盗版必究。
- * Copyright(C) 广州市星翼电子科技有限公司 2014-2024
- * All rights reserved
-********************************************************************************/
-
 /*角速度PID积分限幅（单位：deg/s）*/
 #define PID_RATE_ROLL_INTEGRATION_LIMIT		200.0
 #define PID_RATE_PITCH_INTEGRATION_LIMIT	200.0
@@ -98,7 +85,7 @@ static void allPidInit(void)
 	//XY轴速度PID
 	pidInit(&pid[VELOCITY_XY], pidParam[VELOCITY_XY].kp, pidParam[VELOCITY_XY].ki, pidParam[VELOCITY_XY].kd, 
 		PID_VXY_INTEGRATION_LIMIT, PID_VXY_OUTPUT_LIMIT, VELOCITY_PID_DT, false, 0);
-	//XY轴位置PID 
+	//XY轴位置PID
 	pidInit(&pid[POSHOLD_XY], pidParam[POSHOLD_XY].kp, pidParam[POSHOLD_XY].ki, pidParam[POSHOLD_XY].kd, 
 		0, PID_POS_OUTPUT_LIMIT, POSITION_PID_DT, false, 0);
 }

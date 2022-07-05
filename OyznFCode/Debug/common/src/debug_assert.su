@@ -1,3 +1,3 @@
-debug_assert.c:41:6:assertFail	32	static,ignoring_inline_asm
-debug_assert.c:49:6:storeAssertSnapshotData	16	static
-debug_assert.c:56:6:printAssertSnapshotData	8	static
+debug_assert.c:27:6:assertFail	32	static,ignoring_inline_asm
+debug_assert.c:35:6:storeAssertSnapshotData	16	static
+debug_assert.c:42:6:printAssertSnapshotData	8	static
